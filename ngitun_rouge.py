@@ -1,0 +1,17 @@
+from rouge import Rouge
+import streamlit as st
+
+
+sum = "saat hanoman hadap batara guru untuk aku bagai putra batara narada tertawa sambil sindir batara guru batara guru yang rasa sindir kemudian ambil daun nila sawo kecik dan lempar ke punggung batara narada daun nila sebut jadi ekor kera badan pendek dan bulu biru tua yang tempel di punggung batara narada saat itu batara narada yang sangat benci hadap kera minta ampun kepada batara guru agar kera sebut lepas dari punggung kemudian batara guru beri tahu cara lepas kera itu dari punggung batara narada yaitu dengan aku kera sebut jadi anak akhir batara narada mau aku kera sebut bagai putra batara narada tuntut kepada batara guru untuk perintah semua dewa yang lain untuk puja kera masing masing saperti yang telah laku batara narada ayah nama jamadagni rupa sepupu dari kartawirya raja raja mahespati telah tumpas kaum kesatria ramabargawa rasa jenuh dan putus untuk tinggal dunia dalam tarung sebut justru ramabargawa yang hasil tewas arjuna sasrabahu saat itu ramaparasu sama batara narada batara kanwa dan batara janaka menghadang kereta kresna untuk ikut serta tuju hastina bagai saksi runding kresna dengan pihak korawa prahasta adalah nama orang tokoh dalam wiracarita ramayana yang kenal bagai paman rahwana sekaligus besar raja alengka ia rupa tokoh bijaksana yang sering beri nasihat nasihat harga kepada rahwana versi ramayana sebut prahasta bagai putra tua sumali raja bangsa rakshasa dari raja alengka ia milik saudara perempuan nama kaikesi yang lahir rahwana di bawah perintah rahwana prahasta tindak bagai jabat senior yang sering beri nasihat nasihat kepada keponakan itu dalam jalan roda perintah nasihat nasihat prahasta agar sita kembali sama sekali tidak turut oleh rahwana lalu tarung sengit nila hasil hancur tubuh prahasta guna bong batu karang yang sangat besar dalam versi wayang khusus di jawa prahasta jabat bagai patih dalam perintah rahwana ia kenal bijaksana namun kurang dengar nasihat nasihat oleh keponakan itu ia milik kakak perempuan nama sukesi dua lahir dari rahim putri raja mantili nama danuwati yang nikah oleh sumali raja raja alengka wisrawa milik orang putra nama danapati yang damba sukesi bagai istri sumali pun oleh cerah dan ubah wujud manjadi manusia karena curi dengar tanpa izin tubuh pun ubah wujud jadi raksasa sejak saat itu ia pakai nama prahasta prahasta sering kali beri nasihat nasihat bijaksana namun tidak pernah perhati oleh keponakan yang sifat angkara murka sebut telah lalu tarung seru akhir rahwana hasil rebut kembang dewaretna ia rupa putera raja dasarata dari raja kosala yang ibu kota ayodhya ia milik saudara kembar nama laksmana dan ia adalah yang paling bungsu di antara para putera dasarata satrugna lahir dari permaisuri raja dasarata yang nama sumitra ia milik tiga saudara nama rama yang lahir dari permaisuri kosalya bharata yang lahir dari permaisuri kekayi dan laksmana yang rupa saudara kembar lahir dari permaisuri sumitra kisah berani satrugna yang paling kenal adalah bunuh rakshasa lawanasura raja rakshasa dari mathura yang rupa keponakan rahwana yakni raja rakshasa dari alengka yang bunuh oleh rama trinetra adalah anak prabu dasamuka rahwana yang lahir dari salah orang selir"
+
+def evaluate(sum, raw):
+    r = Rouge()
+    r_score = r.get_scores(sum, raw)
+    return r_score
+
+user_text = st.text_area("Paste Text Here", height=250)
+s = user_text.replace(", ",". ")
+if st.button('display'):
+        st.write(s)
+graph = evaluate(s, sum)
+st.json(graph)
