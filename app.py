@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import nltk
 import uniq_token as uq
-import webbrowser
+# import webbrowser
 import streamlit.components.v1 as components
 
 from lexrank import LexRank
