@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 import nltk
-from uniq_token import unique_token as uq
+import uniq_token as uq
 # import webbrowser
 import streamlit.components.v1 as components
 
