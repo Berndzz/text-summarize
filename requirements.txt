@@ -4,3 +4,4 @@ rouge==1.0.1
 streamlit==1.10.0
 Sastrawi==1.0.1
 lexrank==0.1.0
+tk==0.1.0
