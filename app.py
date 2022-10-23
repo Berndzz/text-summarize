@@ -1,7 +1,8 @@
+from tkinter import PhotoImage
 import pandas as pd
 import streamlit as st
 import nltk
-# import uniq_token as uq
+import uniq_token as uq
 # import webbrowser
 import streamlit.components.v1 as components
 
@@ -58,12 +59,12 @@ def preprocessing_text(text):
   stemmed_sent = [stemmer.stem(sent) for sent in sw_removed]
   return stemmed_sent
 
-# mwe = MWETokenizer([k.split() for k in uq.unique_token], separator='_')
-# def phrase_preprocessing_text(text):
-#   tokenized_paragraph = [token for token in mwe.tokenize(word_tokenize(text))]
-#   tokenized_paragraph = ' '.join([str(t) for t in tokenized_paragraph])
-#   phrase_prepc = [sentence for sentence in nltk.sent_tokenize(tokenized_paragraph)]
-#   return phrase_prepc
+mwe = MWETokenizer([k.split() for k in uq.unique_token], separator='_')
+def phrase_preprocessing_text(text):
+  tokenized_paragraph = [token for token in mwe.tokenize(word_tokenize(text))]
+  tokenized_paragraph = ' '.join([str(t) for t in tokenized_paragraph])
+  phrase_prepc = [sentence for sentence in nltk.sent_tokenize(tokenized_paragraph)]
+  return phrase_prepc
 
 
 
@@ -84,7 +85,7 @@ def get_main_sentences(name,remove_list,original_sentc):
     elif name == 'Preprocessing Sentences':
         sentc = preprocessing_text(original_sentc)
     else:
-        sentc = preprocessing_text(remove_list)
+        sentc = phrase_preprocessing_text(remove_list)
     return sentc
 
 
