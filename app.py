@@ -13,6 +13,8 @@ from nltk.tokenize import MWETokenizer
 from nltk.tokenize import word_tokenize
 from collections import Counter
 
+nltk.download('stopwords')
+
 st.title('LexSumy_v1.1')
 st.write('Made by @Hardus Tukan')
 # link = r'https://drive.google.com/file/d/1KQbGHhnQWj60uOmehyaaNQZFvdSVyNQN/view?usp=sharing'
