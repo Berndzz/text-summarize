@@ -1,4 +1,3 @@
-from tkinter import PhotoImage
 import pandas as pd
 import streamlit as st
 import nltk
