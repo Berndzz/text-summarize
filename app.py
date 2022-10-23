@@ -15,9 +15,9 @@ from collections import Counter
 
 st.title('LexSumy_v1.1')
 st.write('Made by @Hardus Tukan')
-link = r'https://drive.google.com/file/d/1KQbGHhnQWj60uOmehyaaNQZFvdSVyNQN/view?usp=sharing'
-if st.button('Download Korpus File'):
-    webbrowser.open_new_tab(link)
+# link = r'https://drive.google.com/file/d/1KQbGHhnQWj60uOmehyaaNQZFvdSVyNQN/view?usp=sharing'
+# if st.button('Download Korpus File'):
+#     webbrowser.open_new_tab(link)
 
 ### Upload File ###
 file_names = []
