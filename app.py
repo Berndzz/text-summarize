@@ -14,6 +14,7 @@ from nltk.tokenize import word_tokenize
 from collections import Counter
 
 nltk.download('stopwords')
+nltk.download('punkt')
 
 st.title('LexSumy_v1.1')
 st.write('Made by @Hardus Tukan')
