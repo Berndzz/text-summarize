@@ -1,6 +1,6 @@
 import pandas as pd
 
-read_json = pd.read_json('label_mini_2.json')
+read_json = pd.read_json('util/label_mini_2.json')
 
 def text_to_string(row):
   text = row['label']
