@@ -35,7 +35,8 @@ for upload_files in upload_file:
 
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
-listStopword =  set(stopwords.words('indonesian'))
+listStopwordS =  set(stopwords.words('indonesian'))
+listStopwordN =  None
 
 docs = [i.strip("[]").split("\n") for i in raw_texts]
 
@@ -124,7 +125,7 @@ sum_size = int(len(sm1) * 0.25)
 ### LEXRANK LIBRARY ###
 def main():
     try:
-        lxr = LexRank(sm2,stopwords=listStopword)
+        lxr = LexRank(sm2,stopwords=listStopwordS)
         summary = lxr.get_summary(sm1,summary_size=sum_size,threshold=th)
         scores_cont = lxr.rank_sentences(
             sm1,
